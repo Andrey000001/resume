@@ -1,6 +1,6 @@
 # Andrii Kovratovskyi - Full-Stack Developer
 
-📄 [Download PDF Resume](resume.pdf) | 🌐 [View Portfolio](https://andrey000001.github.io/)
+📄 [Download PDF Resume](resume.pdf) | 🌐 [View Portfolio](https://Andrey000001.github.io/)
 
 MERN stack developer with 2+ years of freelance experience building full-stack applications.
 
@@ -18,12 +18,12 @@ MERN stack developer with 2+ years of freelance experience building full-stack a
 ## 🚀 Featured Projects
 
 ### Sociopedia Social Network
-[Live Demo](https://sociopedia-gold-ten.vercel.app/) | [Source Code](https://github.com/andrey000001/sociopedia)
+[Live Demo](https://sociopedia-gold-ten.vercel.app/) | [Source Code](https://github.com/Andrey000001/sociopedia)
 - Features: User auth, posts, likes, image uploads
 - Tech: MERN stack
 
 ### EcomVision Dashboard
-[Live Demo](https://ecomvision-frontend-9mua.onrender.com) | [Source Code](https://github.com/andrey000001/ecomvision)
+[Live Demo](https://ecomvision-frontend-9mua.onrender.com) | [Source Code](https://github.com/Andrey000001/ecomvision)
 - Features: Sales analytics, role-based access
 - Tech: React, Redux, Node.js, MongoDB
 
