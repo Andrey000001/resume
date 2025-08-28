@@ -1,381 +1,3 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>Resume — Andrii Kovratovskyi</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"
-      rel="stylesheet"
-    />
-    <style>
-      :root {
-        --link-hover-bg: #f1f3f5; /* мягкий серый */
-        --link-active-bg: #e9ecef;
-        --font-sans: system-ui, -apple-system, 'Segoe UI', Roboto, Ubuntu, Cantarell, 'Noto Sans',
-          'Helvetica Neue', Arial, 'Apple Color Emoji', 'Segoe UI Emoji';
-      }
-      *,
-      *::before,
-      *::after {
-        box-sizing: border-box;
-      }
-      /* список в две колонки уже есть; превратим пункты в "чипы" */
-      .skills-stack ul {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px; /* расстояние между чипами */
-        padding: 0;
-        margin: 6px 0 0;
-      }
-
-      .skills-stack li {
-        list-style: none;
-        display: inline-block;
-        background: #f3f4f6; /* светло-серый фон */
-        border: 1px solid #e5e7eb;
-        padding: 6px 10px; /* внутри как у кнопки */
-        border-radius: 2px; /* "пилюля" */
-        line-height: 1.2;
-        transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.08s ease;
-      }
-
-      /* лёгкая подсветка при наведении */
-      .skills-stack li:hover {
-        background: #e9ecef;
-        border-color: #d1d5db;
-      }
-
-      /* микро-отклик при нажатии (необязательно) */
-      .skills-stack li:active {
-        transform: translateY(1px);
-      }
-
-      @media (hover: hover) {
-        a:hover {
-          background: var(--link-hover-bg);
-        }
-      }
-      .text-current {
-        color: #1111bd;
-      }
-      a:active {
-        background: var(--link-active-bg);
-      }
-      a:focus-visible {
-        outline: 2px solid #cbd5e1;
-        outline-offset: 2px;
-      }
-      a {
-        text-decoration: none;
-        color: inherit;
-        border-radius: 6px;
-        padding: 2px 6px; /* слегка увеличим «кликабельную» зону */
-        transition: background-color 0.15s ease, box-shadow 0.15s ease, color 0.15s ease;
-      }
-      body {
-        font-family: var(--font-sans);
-        line-height: 1.6;
-      }
-      h1,
-      h2,
-      h3 {
-        font-weight: 700;
-        letter-spacing: 0.02em;
-      }
-      h1 {
-        font-size: 28px;
-      }
-      h2 {
-        font-size: 18px;
-        margin-top: 16px;
-      }
-      h3 {
-        font-size: 16px;
-      }
-      ul,
-      li {
-        margin: 0;
-        padding: 0;
-      }
-      #certifications {
-        padding-bottom: 40px;
-      }
-      @media print {
-        body {
-          -webkit-print-color-adjust: exact;
-          print-color-adjust: exact;
-        }
-      }
-
-      li {
-        list-style: none;
-      }
-      a {
-        text-decoration: none;
-        color: inherit;
-      }
-
-      .container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding-left: 24px;
-        padding-right: 24px;
-      }
-      .stack {
-        font-weight: 500;
-      }
-      .underLine {
-        border-bottom: 2px solid black;
-      }
-      .skills-stack {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 40px;
-      }
-      /* Иконки: наследуют цвет текста, выровнены поbaseline */
-      .icon {
-        width: 16px;
-        height: 16px;
-        margin-right: 8px;
-        vertical-align: -2px;
-      }
-
-      p {
-        color: #7a706e;
-      }
-      .icon_location__certification {
-        fill: #a8b626;
-      }
-      .icon_linkedin {
-        fill: #2c2cfe;
-      }
-      .icon_phone {
-        fill: #1b8153cc;
-      }
-      .icon_mail {
-        fill: hwb(240 45% 45%);
-      }
-
-      .title-stack {
-        border-left: 2px solid black;
-      }
-
-      /* Контакты в шапке */
-      .header-list {
-        display: flex;
-        gap: 12px 16px;
-        align-items: center;
-        flex-wrap: wrap;
-        padding: 0;
-        margin: 0;
-      }
-      .header-list li {
-        display: flex;
-        align-items: center;
-      }
-      .link {
-        font-weight: 600;
-      }
-      .stack-sub {
-        font-size: 18px;
-        font-weight: 600;
-      }
-    </style>
-  </head>
-  <body>
-    <header>
-      <div class="container">
-        <h1>Andrii Kovratovskyi</h1>
-        <p class="stack-sub text-current">Full Stack Developer</p>
-        <address>
-          <ul class="header-list">
-            <li>
-              <a href="tel:+19342332268">
-                <svg class="icon icon_phone" viewBox="0 0 24 24" aria-hidden="true">
-                  <path
-                    d="M22 16.92v2.58a2 2 0 0 1-2.18 2 19.88 19.88 0 0 1-8.67-3.07 19.5 19.5 0 0 1-6-6A19.88 19.88 0 0 1 2.5 4.18 2 2 0 0 1 4.5 2h2.58a2 2 0 0 1 2 1.72c.12.86.34 1.7.65 2.5a2 2 0 0 1-.45 2.11L8.4 9.8a16 16 0 0 0 5.8 5.8l1.47-1.48a2 2 0 0 1 2.11-.45c.8.31 1.64.53 2.5.65A2 2 0 0 1 22 16.92z"
-                  />
-                </svg>
-                +1 934 233 2268
-              </a>
-            </li>
-
-            <li>
-              <a href="mailto:kovratovskiy1999@gmail.com">
-                <svg class="icon icon_mail" viewBox="0 0 24 24" aria-hidden="true">
-                  <path
-                    d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm0 2l8 5 8-5"
-                  />
-                </svg>
-                kovratovskiy1999@gmail.com
-              </a>
-            </li>
-
-            <li>
-              <a
-                href="https://www.linkedin.com/in/andrii-kovratovskyi/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-=                <svg class="icon icon_linkedin" viewBox="0 0 24 24" aria-hidden="true">
-                  <path
-                    d="M4.98 3.5A2.5 2.5 0 1 1 5 8.5 2.5 2.5 0 0 1 4.98 3.5zM3 9h4v12H3zM10 9h4v1.8c.57-1.05 2-2.04 3.9-2.04 4.17 0 4.1 3.15 4.1 5.62V21h-4v-5.2c0-1.24-.02-2.83-1.73-2.83-1.73 0-2 1.35-2 2.74V21h-4z"
-                  />
-                </svg>
-                LinkedIn
-              </a>
-            </li>
-
-            <li>
-              <span>
-                <svg
-                  class="icon icon_location__certification"
-                  viewBox="0 0 24 24"
-                  aria-hidden="true"
-                >
-                  <path
-                    d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"
-                  />
-                </svg>
-                Miami, FL
-              </span>
-            </li>
-          </ul>
-        </address>
-      </div>
-    </header>
-
-    <main class="container">
-      <section id="summary">
-        <h2 class="underLine">SUMMARY</h2>
-        <p>
-          I build web products that move business metrics. Front end on React/Next.js; back end on
-          Node/NestJS with PostgreSQL and MongoDB. REST/GraphQL with Prisma/Mongoose. Own delivery
-          from design to rollout: feature flags, monitoring (Sentry/Grafana), and clean migrations.
-        </p>
-      </section>
-
-      <section id="experience">
-        <h2 class="underLine">EXPERIENCE</h2>
-
-        <article>
-          <h3>Frontend Developer — <span class="text-current">SoftServe</span></h3>
-          <div>
-            <span>Kyiv, Ukraine</span> · <time datetime="2021-01">January 2021</time> —
-            <time datetime="2022-12">December 2022</time>
-          </div>
-          <ul>
-            <li>
-              <p>
-                Adopted Next.js SSR/ISR and tuned data-fetching, improving real-world Core Web
-                Vitals (LCP near ~2s p75) and reducing TTFB. Tightened accessibility (WCAG 2.1 AA)
-                and cross-browser support; Lighthouse Accessibility score consistently 95–98.
-              </p>
-            </li>
-          </ul>
-        </article>
-
-        <article>
-          <h3>Web Developer — <span class="text-current">N-iX</span></h3>
-          <div>
-            <span>Lviv, Ukraine</span> · <time datetime="2019-02">February 2019</time> —
-            <time datetime="2019-06">June 2019</time>
-          </div>
-          <ul>
-            <li>
-              <p>
-                Migrated legacy JS to TypeScript and organized the build (Webpack), stabilizing
-                builds and clarifying module boundaries. Bootstrapped a lightweight React component
-                library with Storybook, reducing duplication and onboarding time. Integrated REST
-                APIs with proper pagination/caching and robust error handling; simplified state
-                flows.
-              </p>
-            </li>
-          </ul>
-        </article>
-      </section>
-
-      <section id="education">
-        <h2 class="underLine">EDUCATION</h2>
-        <article>
-          <h3>Bachelor’s in Software Engineering</h3>
-          <p>Dnipro State Technical University — Dnipro, Ukraine</p>
-          <p>
-            <time datetime="2016-09">September 2016</time> —
-            <time datetime="2020-06">June 2020</time>
-          </p>
-        </article>
-      </section>
-
-      <section id="skills">
-        <h2 class="underLine">SKILLS</h2>
-
-        <div class="skills-stack">
-          <div>
-            <h3 class="text-current stack">Front-end stack</h3>
-            <ul>
-              <li>HTML5</li>
-              <li>CSS3</li>
-              <li>SASS</li>
-              <li>Tailwind CSS</li>
-              <li>MUI</li>
-              <li>JavaScript (ES6+)</li>
-              <li>TypeScript</li>
-              <li>React</li>
-              <li>Next.js</li>
-              <li>Redux Toolkit</li>
-              <li>Webpack</li>
-              <li>Code splitting</li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 class="text-current stack">Back-end stack</h3>
-            <ul>
-              <li>Node.js</li>
-              <li>NestJS</li>
-              <li>Express</li>
-              <li>PostgreSQL</li>
-              <li>MongoDB</li>
-              <li>Prisma (SQL)</li>
-              <li>Mongoose (MongoDB)</li>
-              <li>REST</li>
-              <li>GraphQL</li>
-              <li>Auth (JWT)</li>
-              <li>Auth (OAuth)</li>
-              <li>Docker</li>
-              <li>AWS S3</li>
-              <li>AWS EC2</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <section id="certifications">
-        <h2 class="underLine">CERTIFICATIONS</h2>
-        <ul>
-          <li>
-            <b class="text-current">Full stack developer -</b>
-
-            <a
-              href="https://drive.google.com/file/d/1TNzEVbMS36_owBXdLzzCStji_pt0JlvO/view"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <svg class="icon icon_location__certification" viewBox="0 0 24 24" aria-hidden="true">
-                <path
-                  d="M12 2a6 6 0 1 1 0 12A6 6 0 0 1 12 2zm-2.5 12.9L5 17v5l4.5-2 4.5 2v-5l-4.5-2.1z"
-                />
-              </svg>
-              Certificate GO-IT
-            </a>
-          </li>
-        </ul>
-      </section>
-    </main>
-  </body>
-</html> -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -583,12 +205,10 @@
               <li>Docker</li><li>AWS S3</li><li>AWS EC2</li>
             </ul>
           </div>
-
-          
         </div>
       </section>
 
-      <!-- NEW: PROJECTS -->
+      <!-- PROJECTS (осталось на месте; исправлены только технологии и bullets) -->
       <section id="projects">
         <h2 class="underLine">PROJECTS</h2>
 
@@ -596,16 +216,23 @@
           <article class="project-card">
             <h3>EcomVision (Frontend)</h3>
             <p>
+              <!-- Исправлены бейджи под фактический стек -->
               <span class="badge">React</span>
               <span class="badge">TypeScript</span>
-              <span class="badge">State (RTK/SWR)</span>
-              <span class="badge">Tailwind</span>
+              <span class="badge">Redux Toolkit / RTK Query</span>
+              <span class="badge">Material UI</span>
+              <span class="badge">Data Grid</span>
+              <span class="badge">Nivo Charts</span>
+              <span class="badge">Node.js</span>
+              <span class="badge">Express.js</span>
+              <span class="badge">MongoDB</span>
             </p>
             <ul>
-              <li>Product listing with sorting/filters and responsive grid.</li>
-              <li>Product detail page; cart with add/remove/update and local persistence.</li>
-              <li>API layer with robust loading/error states and empty-state UX.</li>
-              <li>Basic a11y (focus, color contrast) and Lighthouse checks.</li>
+              <!-- Обновлены bullets по твоему описанию туториала MERN Admin Dashboard -->
+              <li>Built and deployed a <b>MERN Admin Dashboard</b> with responsive UI.</li>
+              <li>Frontend with <b>Material UI</b>, <b>Data Grid</b>, <b>Nivo Charts</b>, <b>Redux Toolkit</b> and <b>RTK Query</b>.</li>
+              <li>Backend using <b>Node.js</b>, <b>Express.js</b>, <b>MongoDB</b> and <b>Mongoose</b>.</li>
+              <li>Designed data models (ERD) and implemented <b>MongoDB aggregate</b> queries for analytics.</li>
             </ul>
             <p class="project-link">
               <a class="link" href="https://ecomvision-frontend-9mua.onrender.com" target="_blank" rel="noopener noreferrer">
@@ -617,16 +244,20 @@
           <article class="project-card">
             <h3>Sociopedia (Social Prototype)</h3>
             <p>
-              <span class="badge">Next.js</span>
-              <span class="badge">TypeScript</span>
-              <span class="badge">API contracts</span>
-              <span class="badge">Vercel</span>
+              <!-- Исправлены бейджи под «Build a COMPLETE Fullstack Responsive MERN App… | React, MongoDB, MUI» -->
+              <span class="badge">React</span>
+              <span class="badge">Material UI</span>
+              <span class="badge">Node.js</span>
+              <span class="badge">Express.js</span>
+              <span class="badge">MongoDB</span>
+              <span class="badge">Auth</span>
+              <span class="badge">Dark Mode</span>
             </p>
             <ul>
-              <li>Feed, reactions (likes/comments if enabled), optimistic UI updates.</li>
-              <li>User/profile pages with basic routing and SEO-friendly markup.</li>
-              <li>Pagination, error boundaries, and graceful empty states.</li>
-              <li>Deployed on Vercel (serverless cold-start possible on first hit).</li>
+              <li>Built a complete <b>MERN social media</b> app with authentication.</li>
+              <li>Implemented <b>likes</b>, comments, and <b>dark mode</b>; responsive UI with MUI.</li>
+              <li>Backend with <b>Node.js</b>, <b>Express.js</b> and <b>MongoDB</b> (Mongoose).</li>
+              <li>Deployed frontend on Vercel; supports scalable API design and CRUD flows.</li>
             </ul>
             <p class="project-link">
               <a class="link" href="https://sociopedia-gold-ten.vercel.app/" target="_blank" rel="noopener noreferrer">
@@ -644,8 +275,7 @@
             <b class="text-current">Full stack developer -</b>
             <a
               href="https://drive.google.com/file/d/1TNzEVbMS36_owBXdLzzCStji_pt0JlvO/view"
-              target="_blank"
-              rel="noopener noreferrer"
+              target="_blank" rel="noopener noreferrer"
             >
               <svg class="icon icon_location__certification" viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M12 2a6 6 0 1 1 0 12A6 6 0 0 1 12 2zm-2.5 12.9L5 17v5l4.5-2 4.5 2v-5l-4.5-2.1z"/>
