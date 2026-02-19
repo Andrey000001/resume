@@ -11,9 +11,9 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-zinc-50 text-zinc-900">
+    <div className=" bg-zinc-50 text-zinc-900">
       {/* Page */}
-      <main className="mx-auto max-w-[900px] px-6 py-10">
+      <main className="mx-auto print-onepage max-w-[900px] px-4 py-4">
         {/* Header */}
         <header className="space-y-2">
           <h1 className="text-3xl font-semibold tracking-tight">Andrii Kovratovskyi</h1>
@@ -52,15 +52,15 @@ export default function Home() {
             </a>
           </div>
 
-          <div className="h-px w-full bg-zinc-300 mt-4" />
+          <div className="h-px w-full bg-zinc-300 mt-2 mb-1" />
         </header>
 
         {/* Sections */}
-        <section className="mt-6 grid gap-6">
+        <section className="grid gap-2">
           {/* Summary */}
           <div>
             <h2 className="text-sm font-semibold tracking-wide uppercase text-zinc-800">Summary</h2>
-            <p className="mt-2 text-sm leading-6 text-zinc-700">
+            <p className="text-sm leading-6 text-zinc-700">
               Full-stack developer focused on responsive React/Next.js applications with TypeScript, reusable UI components,
               and secure REST APIs. Strong in dashboards, auth flows, and deployment.
             </p>
@@ -70,7 +70,7 @@ export default function Home() {
           <div>
             <h2 className="text-sm font-semibold tracking-wide uppercase text-zinc-800">Technical Skills</h2>
 
-            <div className="mt-2 grid gap-2 text-sm text-zinc-700">
+            <div className=" grid gap-2 text-sm text-zinc-700">
               <p>
                 <span className="font-medium text-zinc-800">Frontend:</span>{" "}
                 React, Next.js, TypeScript, JavaScript (ES6+), Redux Toolkit, Tailwind CSS, Material UI
@@ -90,7 +90,7 @@ export default function Home() {
           <div>
             <h2 className="text-sm font-semibold tracking-wide uppercase text-zinc-800">Projects</h2>
 
-            <div className="mt-3 grid gap-4">
+            <div className="mt-1 grid gap-2">
               <Project
                 title="DevEvents — Cloud-Ready SaaS App"
                 link={links.devEvents}
@@ -145,11 +145,11 @@ export default function Home() {
           </div>
 
           {/* Education + Certificate */}
-                <div className="grid gap-6 sm:grid-cols-2">
+                <div className="grid gap-4 sm:grid-cols-2">
   <div>
     <h2 className="text-sm font-semibold tracking-wide uppercase text-zinc-800">Education</h2>
 
-    <div className="mt-3 space-y-4 text-sm text-zinc-700">
+    <div className="mt-3 flex gap-7 space-y-4 text-sm text-zinc-700">
       <div>
         <div className="flex flex-wrap items-baseline gap-x-2 gap-y-1">
           <div className="font-medium text-zinc-900">GoIT Academy</div>
