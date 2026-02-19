@@ -130,7 +130,7 @@ export default function Home() {
               <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
                 <div className="text-sm">
                   <span className="font-semibold text-zinc-900">Full-Stack Developer</span>
-                  <span className="text-zinc-500"> — Self-Employed</span>
+                  <span className="text-zinc-500"> — Independent Contractor</span>
                   <span className="text-zinc-500"> (Miami, FL)</span>
                 </div>
                 <div className="text-sm text-zinc-600">Feb 2023 — Present</div>
@@ -145,33 +145,55 @@ export default function Home() {
           </div>
 
           {/* Education + Certificate */}
-                <div className="grid gap-4 sm:grid-cols-2">
-  <div>
-    <h2 className="text-sm font-semibold tracking-wide uppercase text-zinc-800">Education</h2>
+  {/* Education */}
+<div>
+  <h2 className="text-sm font-semibold tracking-wide uppercase text-zinc-800">
+    Education
+  </h2>
 
-    <div className="mt-3 flex gap-7 space-y-4 text-sm text-zinc-700">
-      <div>
-        <div className="flex flex-wrap items-baseline gap-x-2 gap-y-1">
-          <div className="font-medium text-zinc-900">GoIT Academy</div>
-          <a
-            href={links.certificate}
-            target="_blank"
-            rel="noreferrer"
-            className="text-xs underline underline-offset-2 text-zinc-700 hover:text-zinc-900"
-          >
-            Certificate
-          </a>
-        </div>
-        <div>Full Stack Developer</div>
-        <div className="text-zinc-600">Dec 2023 — Oct 2024</div>
+  <div className="mt-3 space-y-4 text-sm text-zinc-700">
+
+    {/* GoIT */}
+    <div>
+      <div className="flex items-baseline justify-between">
+        <span className="font-medium text-zinc-900">
+          GoIT Academy
+        </span>
+
+        <span className="text-zinc-600">
+          Dec 2023 — Oct 2024
+        </span>
       </div>
 
-      <div>
-        <div className="font-medium text-zinc-900">National Technical University of Ukraine</div>
-        <div>B.S. in Computer Engineering</div>
-        <div className="text-zinc-600">2016 — 2019</div>
+      <div className="flex items-baseline justify-between">
+        <span>Full Stack Developer</span>
+
+        <a
+          href={links.certificate}
+          target="_blank"
+          rel="noreferrer"
+          className="text-xs underline underline-offset-2 text-zinc-700 hover:text-zinc-900 text-[14px]"
+        >
+          Certificate
+        </a>
       </div>
     </div>
+
+    {/* University */}
+    <div>
+      <div className="flex items-baseline justify-between">
+        <span className="font-medium text-zinc-900">
+          National Technical University of Ukraine
+        </span>
+
+        <span className="text-zinc-600">
+          2016 — 2019
+        </span>
+      </div>
+
+      <div>B.S. in Computer Engineering</div>
+    </div>
+
   </div>
 </div>
 
