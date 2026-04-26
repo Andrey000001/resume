@@ -1,240 +1,301 @@
-export default function Home() {
-  const links = {
-    email: "mailto:kovratovskyiandrii1999@gmail.com",
-    phone: "tel:+19342332268",
-    linkedin: "https://www.linkedin.com/feed/", // лучше заменить на свой профиль URL
-    github: "https://github.com/Andrey000001",
-    devEvents: "https://devevents-seven-nu.vercel.app/",
-    sociopedia: "https://sociopedia-gold-ten.vercel.app/",
-    ecomVision: "https://ecomvision-frontend-9mua.onrender.com",
-    certificate: "https://drive.google.com/file/d/1TNzEVbMS36_owBXdLzzCStji_pt0JlvO/view?usp=sharing"
-  };
+const links = {
+  email: "mailto:kovratovskyiandrii1999@gmail.com",
+  phone: "tel:+19342332268",
+  linkedin: "https://www.linkedin.com/in/andrii-kovratovskyi/",
+  github: "https://github.com/Andrey000001",
+  devEvents: {
+    live: "https://devevents-seven-nu.vercel.app/",
+    repo: "https://github.com/Andrey000001/devevents",
+  },
+  sociopedia: {
+    live: "https://sociopedia-gold-ten.vercel.app/",
+    repo: "https://github.com/Andrey000001/sociopedia",
+  },
+  ecomVision: {
+    live: "https://ecomvision-frontend-9mua.onrender.com",
+    repo: "https://github.com/Andrey000001/ecomvision",
+  },
+  certificate:
+    "https://drive.google.com/file/d/1TNzEVbMS36_owBXdLzzCStji_pt0JlvO/view?usp=sharing",
+};
 
+const projects = [
+  {
+    title: "DevEvents",
+    subtitle: "Cloud-Ready SaaS Platform",
+    live: links.devEvents.live,
+    repo: links.devEvents.repo,
+    stack: ["Next.js 14", "TypeScript", "MongoDB", "Tailwind CSS", "Cloudinary", "PostHog"],
+    bullets: [
+      "Built complete auth flow — sign-up, login, protected routes — and full event booking system end-to-end",
+      "Developed admin dashboard with complex filtering, pagination, and image upload via Cloudinary",
+      "Integrated PostHog analytics to track user behavior across the booking funnel in real time",
+    ],
+  },
+  {
+    title: "EcomVision",
+    subtitle: "Admin & Analytics Panel",
+    live: links.ecomVision.live,
+    repo: links.ecomVision.repo,
+    stack: ["React", "Node.js", "Express.js", "MongoDB", "Material UI"],
+    bullets: [
+      "Designed and built REST API from scratch with JWT authentication and role-based access control",
+      "Created interactive KPI dashboards with charts for sales, users, and product performance metrics",
+      "Structured reusable component library — reduced UI code duplication across the dashboard significantly",
+    ],
+  },
+  {
+    title: "Sociopedia",
+    subtitle: "MERN Social Network",
+    live: links.sociopedia.live,
+    repo: links.sociopedia.repo,
+    stack: ["React", "Redux Toolkit", "Node.js", "Express.js", "MongoDB", "JWT"],
+    bullets: [
+      "Implemented social features — profiles, posts, likes, comments — with optimistic UI updates via Redux",
+      "Designed MongoDB schemas for users, posts, and relationships; handled nested population queries",
+      "Built private/public route system with Redux-managed auth state and persistent sessions",
+    ],
+  },
+];
+
+const s = {
+  wrap: {
+    maxWidth: 820,
+    margin: "0 auto",
+    padding: "2rem 1.5rem",
+    fontFamily: "system-ui, sans-serif",
+    background: "#fff",
+    color: "#0f172a",
+  },
+  name: { fontSize: 26, fontWeight: 500, letterSpacing: -0.3, marginBottom: 4 },
+  subtitle: { fontSize: 14, color: "#64748b", marginBottom: 12 },
+  contacts: { display: "flex", flexWrap: "wrap", gap: "6px 0", marginBottom: 12 },
+  contactItem: { fontSize: 12.5, color: "#64748b", marginRight: 16, textDecoration: "none" },
+  contactLink: { fontSize: 12.5, color: "#2563eb", marginRight: 16, textDecoration: "none" },
+  badge: {
+    display: "inline-flex", alignItems: "center", gap: 5,
+    background: "#f0fdf4", color: "#15803d",
+    fontSize: 11.5, fontWeight: 500,
+    padding: "3px 10px", borderRadius: 6,
+    border: "0.5px solid #bbf7d0",
+  },
+  divider: { height: 0.5, background: "#e2e8f0", margin: "16px 0" },
+  sectionLabel: {
+    fontSize: 10,
+    fontWeight: 500,
+    letterSpacing: "0.12em",
+    textTransform: "uppercase" as const,
+    color: "#94a3b8",
+    marginBottom: 10,
+  },
+  summary: { fontSize: 13.5, lineHeight: 1.75, color: "#334155" },
+  skillRow: { display: "flex", gap: 6, fontSize: 13, color: "#334155", marginBottom: 5, flexWrap: "wrap" as const },
+  skillLabel: { fontWeight: 500, color: "#64748b", minWidth: 72, flexShrink: 0 },
+  project: { borderLeft: "2px solid #bfdbfe", paddingLeft: 14, marginBottom: 18 },
+  projHead: {
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "flex-start" as const,
+    flexWrap: "wrap" as const,
+    gap: 4,
+    marginBottom: 5,
+  },
+  projTitle: { fontSize: 13.5, fontWeight: 500 },
+  projSub: { fontSize: 12.5, color: "#64748b", marginLeft: 6 },
+  projLinks: { display: "flex", gap: 12 },
+  projLink: { fontSize: 12, color: "#2563eb", textDecoration: "none" },
+  tags: { display: "flex", flexWrap: "wrap" as const, gap: 4, marginBottom: 7 },
+  tag: {
+    fontSize: 11,
+    padding: "2px 7px",
+    borderRadius: 4,
+    background: "#f8fafc",
+    color: "#64748b",
+    border: "0.5px solid #e2e8f0",
+  },
+  bullet: { fontSize: 13, color: "#334155", lineHeight: 1.7, marginBottom: 1 },
+  eduName: { fontSize: 13.5, fontWeight: 500 },
+  eduDate: { fontSize: 12.5, color: "#64748b" },
+  eduDesc: { fontSize: 13, color: "#64748b", lineHeight: 1.65 },
+};
+
+function Section({
+  title,
+  children,
+}: {
+  title: string;
+  children: React.ReactNode;
+}) {
   return (
-    <div className=" bg-zinc-50 text-zinc-900">
-      {/* Page */}
-      <main className="mx-auto print-onepage max-w-[900px] px-4 py-4">
-        {/* Header */}
-        <header className="space-y-2">
-          <h1 className="text-3xl font-semibold tracking-tight">Andrii Kovratovskyi</h1>
-          <p className="text-sm text-zinc-700">
-            Full-Stack Developer (React/Next.js) • TypeScript • Node.js
-          </p>
+    <section style={{ marginBottom: 18 }}>
+      <p style={s.sectionLabel}>{title}</p>
+      {children}
+    </section>
+  );
+}
 
-          <div className="flex flex-wrap gap-x-4 gap-y-1 text-sm text-zinc-700">
-            <span>Miami, FL</span>
-            <a className="underline underline-offset-2 hover:text-zinc-900" href={links.phone}>
-              +1 (934) 233-2268
-            </a>
-            <a className="underline underline-offset-2 hover:text-zinc-900" href={links.email}>
-              kovratovskyiandrii1999@gmail.com
-            </a>
-            <a className="underline underline-offset-2 hover:text-zinc-900" href={links.linkedin} target="_blank" rel="noreferrer">
-              LinkedIn
-            </a>
-            <a className="underline underline-offset-2 hover:text-zinc-900" href={links.github} target="_blank" rel="noreferrer">
-              GitHub
-            </a>
-          </div>
-
-          <div className="flex flex-wrap items-center gap-2 text-sm">
-            <span className="text-zinc-600">Live:</span>
-            <a className="underline underline-offset-2 hover:text-zinc-900" href={links.devEvents} target="_blank" rel="noreferrer">
-              DevEvents
-            </a>
-            <span className="text-zinc-300">•</span>
-            <a className="underline underline-offset-2 hover:text-zinc-900" href={links.ecomVision} target="_blank" rel="noreferrer">
-              EcomVision
-            </a>
-            <span className="text-zinc-300">•</span>
-            <a className="underline underline-offset-2 hover:text-zinc-900" href={links.sociopedia} target="_blank" rel="noreferrer">
-              Sociopedia
-            </a>
-          </div>
-
-          <div className="h-px w-full bg-zinc-300 mt-2 mb-1" />
-        </header>
-
-        {/* Sections */}
-        <section className="grid gap-2">
-          {/* Summary */}
-          <div>
-            <h2 className="text-sm font-semibold tracking-wide uppercase text-zinc-800">Summary</h2>
-            <p className="text-sm leading-6 text-zinc-700">
-              Full-stack developer focused on responsive React/Next.js applications with TypeScript, reusable UI components,
-              and secure REST APIs. Strong in dashboards, auth flows, and deployment.
-            </p>
-          </div>
-
-          {/* Skills */}
-          <div>
-            <h2 className="text-sm font-semibold tracking-wide uppercase text-zinc-800">Technical Skills</h2>
-
-            <div className=" grid gap-2 text-sm text-zinc-700">
-              <p>
-                <span className="font-medium text-zinc-800">Frontend:</span>{" "}
-                React, Next.js, TypeScript, JavaScript (ES6+), Redux Toolkit, Tailwind CSS, Material UI
-              </p>
-              <p>
-                <span className="font-medium text-zinc-800">Backend:</span>{" "}
-                Node.js, Express.js, REST APIs, JWT Auth, Prisma, PostgreSQL, MongoDB
-              </p>
-              <p>
-                <span className="font-medium text-zinc-800">Tools:</span>{" "}
-                Git/GitHub, Vercel, Render, PostHog, Cloudinary
-              </p>
-            </div>
-          </div>
-
-          {/* Projects */}
-          <div>
-            <h2 className="text-sm font-semibold tracking-wide uppercase text-zinc-800">Projects</h2>
-
-            <div className="mt-1 grid gap-2">
-              <Project
-                title="DevEvents — Cloud-Ready SaaS App"
-                link={links.devEvents}
-                bullets={[
-                  "Built an events platform with authentication, booking flow, analytics, and image uploads.",
-                  "Implemented admin dashboard features: complex forms, filtering, pagination, responsive layouts.",
-                  "Stack: Next.js 14, TypeScript, Tailwind CSS, MongoDB, PostHog, Cloudinary.",
-                ]}
-              />
-
-              <Project
-                title="EcomVision — Admin & Analytics Panel"
-                link={links.ecomVision}
-                bullets={[
-                  "Developed an admin dashboard with KPI charts, user/product management, and secure login.",
-                  "Integrated REST API and improved maintainability with reusable component patterns.",
-                  "Stack: React, Material UI, Node.js, Express.js, MongoDB.",
-                ]}
-              />
-
-              <Project
-                title="Sociopedia — MERN Social Platform"
-                link={links.sociopedia}
-                bullets={[
-                  "Built social features: profiles, posts, likes, comments, protected routes, and roles.",
-                  "Designed MongoDB data models and integrated APIs for a smooth UI experience.",
-                  "Stack: React, Redux Toolkit, Node.js, Express.js, MongoDB, JWT, MUI.",
-                ]}
-              />
-            </div>
-          </div>
-
-          {/* Experience */}
-          <div>
-            <h2 className="text-sm font-semibold tracking-wide uppercase text-zinc-800">Experience</h2>
-            <div className="mt-3">
-              <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
-                <div className="text-sm">
-                  <span className="font-semibold text-zinc-900">Full-Stack Developer</span>
-                  <span className="text-zinc-500"> — Independent Contractor</span>
-                  <span className="text-zinc-500"> (Miami, FL)</span>
-                </div>
-                <div className="text-sm text-zinc-600">Feb 2023 — Present</div>
-              </div>
-
-              <ul className="mt-2 list-disc pl-5 text-sm leading-6 text-zinc-700">
-                <li>Build and ship full-stack projects end-to-end (UI, APIs, auth, databases, deployment).</li>
-                <li>Comfortable with remote collaboration, code reviews, and iterative improvement.</li>
-                <li>Focus on maintainable components, predictable state management, and clean API integration.</li>
-              </ul>
-            </div>
-          </div>
-
-          {/* Education + Certificate */}
-  {/* Education */}
-<div>
-  <h2 className="text-sm font-semibold tracking-wide uppercase text-zinc-800">
-    Education
-  </h2>
-
-  <div className="mt-3 space-y-4 text-sm text-zinc-700">
-
-    {/* GoIT */}
-    <div>
-      <div className="flex items-baseline justify-between">
-        <span className="font-medium text-zinc-900">
-          GoIT Academy
-        </span>
-
-        <span className="text-zinc-600">
-          Dec 2023 — Oct 2024
-        </span>
+function ProjectCard({ p }: { p: (typeof projects)[0] }) {
+  return (
+    <div style={s.project}>
+      <div style={s.projHead}>
+        <div>
+          <span style={s.projTitle}>{p.title}</span>
+          <span style={s.projSub}>— {p.subtitle}</span>
+        </div>
+        <div style={s.projLinks}>
+          <a href={p.live} target="_blank" rel="noreferrer" style={s.projLink}>
+            Live Demo ↗
+          </a>
+          <a href={p.repo} target="_blank" rel="noreferrer" style={s.projLink}>
+            GitHub ↗
+          </a>
+        </div>
       </div>
-
-      <div className="flex items-baseline justify-between">
-        <span>Full Stack Developer</span>
-
-        <a
-          href={links.certificate}
-          target="_blank"
-          rel="noreferrer"
-          className="text-xs underline underline-offset-2 text-zinc-700 hover:text-zinc-900 text-[14px]"
-        >
-          Certificate
-        </a>
+      <div style={s.tags}>
+        {p.stack.map((t) => (
+          <span key={t} style={s.tag}>
+            {t}
+          </span>
+        ))}
       </div>
-    </div>
-
-    {/* University */}
-    <div>
-      <div className="flex items-baseline justify-between">
-        <span className="font-medium text-zinc-900">
-          National Technical University of Ukraine
-        </span>
-
-        <span className="text-zinc-600">
-          2016 — 2019
-        </span>
-      </div>
-
-      <div>B.S. in Computer Engineering</div>
-    </div>
-
-  </div>
-</div>
-
-
-          <div className="h-px w-full bg-zinc-200" />
-
-       
-        </section>
-      </main>
+      <ul style={{ paddingLeft: 14, margin: 0 }}>
+        {p.bullets.map((b, i) => (
+          <li key={i} style={s.bullet}>
+            {b}
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }
 
-function Project({
-  title,
-  link,
-  bullets,
-}: {
-  title: string;
-  link: string;
-  bullets: string[];
-}) {
+export default function Home() {
   return (
-    <article className="rounded-xl border border-zinc-200 bg-white p-4">
-      <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
-        <h3 className="text-sm font-semibold text-zinc-900">{title}</h3>
+    <div style={s.wrap}>
+      <h1 style={s.name}>Andrii Kovratovskyi</h1>
+      <p style={s.subtitle}>
+        Full-Stack Developer · React / Next.js · TypeScript · Node.js
+      </p>
+
+      <div style={s.contacts}>
+        <span style={s.contactItem}>Miami, FL</span>
+        <a href={links.phone} style={s.contactLink}>
+          +1 (934) 233-2268
+        </a>
+        <a href={links.email} style={s.contactLink}>
+          kovratovskyiandrii1999@gmail.com
+        </a>
         <a
-          className="text-sm underline underline-offset-2 text-zinc-700 hover:text-zinc-900"
-          href={link}
+          href={links.linkedin}
           target="_blank"
           rel="noreferrer"
+          style={s.contactLink}
         >
-          Live
+          LinkedIn ↗
+        </a>
+        <a
+          href={links.github}
+          target="_blank"
+          rel="noreferrer"
+          style={s.contactLink}
+        >
+          GitHub ↗
         </a>
       </div>
 
-      <ul className="mt-2 list-disc pl-5 text-sm leading-6 text-zinc-700">
-        {bullets.map((b) => (
-          <li key={b}>{b}</li>
+      <span style={s.badge}>
+        ✓ Authorized to work for any US employer — no sponsorship required
+      </span>
+
+      <div style={s.divider} />
+
+      <Section title="Summary">
+        <p style={s.summary}>
+          Junior Full-Stack Developer with{" "}
+          <strong>3 fully deployed production apps</strong> built with React,
+          Next.js, Node.js, and TypeScript. Hands-on experience building auth
+          systems, REST APIs, admin dashboards, and database models from
+          scratch. Comfortable across the full stack — from MongoDB schemas to
+          responsive UI. Fast learner, ships working code.
+        </p>
+      </Section>
+
+      <Section title="Technical Skills">
+        <div style={s.skillRow}>
+          <b style={s.skillLabel}>Frontend</b>
+          <span>
+            React, Next.js 14, TypeScript, JavaScript (ES6+), Redux Toolkit,
+            Tailwind CSS, Material UI
+          </span>
+        </div>
+        <div style={s.skillRow}>
+          <b style={s.skillLabel}>Backend</b>
+          <span>
+            Node.js, Express.js, REST APIs, JWT Auth, Prisma, PostgreSQL,
+            MongoDB
+          </span>
+        </div>
+        <div style={s.skillRow}>
+          <b style={s.skillLabel}>Tools</b>
+          <span>Git / GitHub, Vercel, Render, Cloudinary, PostHog</span>
+        </div>
+      </Section>
+
+      <Section title="Featured Projects">
+        {projects.map((p) => (
+          <ProjectCard key={p.title} p={p} />
         ))}
-      </ul>
-    </article>
+      </Section>
+
+      <Section title="Education">
+        <div style={{ marginBottom: 14 }}>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              flexWrap: "wrap",
+              gap: 4,
+              marginBottom: 2,
+            }}
+          >
+            <span style={s.eduName}>
+              GoIT Academy — Full Stack Developer Program
+            </span>
+            <span style={s.eduDate}>Dec 2023 – Oct 2024</span>
+          </div>
+          <p style={s.eduDesc}>
+            690+ hours: HTML/CSS, JavaScript, React, Node.js, TypeScript · 3
+            team projects ·{" "}
+            <a
+              href={links.certificate}
+              target="_blank"
+              rel="noreferrer"
+              style={{ color: "#2563eb" }}
+            >
+              View Certificate ↗
+            </a>
+          </p>
+        </div>
+        <div>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              flexWrap: "wrap",
+              gap: 4,
+              marginBottom: 2,
+            }}
+          >
+            <span style={s.eduName}>
+              National Technical University of Ukraine
+            </span>
+            <span style={s.eduDate}>2016 – 2019</span>
+          </div>
+          <p style={s.eduDesc}>
+            Computer Engineering — transitioned to full-stack development
+          </p>
+        </div>
+      </Section>
+    </div>
   );
 }
