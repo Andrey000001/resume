@@ -117,7 +117,7 @@ const s = {
   eduName: { fontSize: 13.5, fontWeight: 500 },
   eduDate: { fontSize: 12.5, color: "#64748b" },
   eduDesc: { fontSize: 13, color: "#64748b", lineHeight: 1.65 },
-};
+} as const
 
 function Section({
   title,
